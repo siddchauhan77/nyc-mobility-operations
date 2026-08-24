@@ -52,7 +52,7 @@ The measures would be trips per driver-hour, revenue per online hour, empty mile
 
 Live case study: https://nyc-mobility-operations.vercel.app/?v=3ps
 
-GitHub: [ADD_REPOSITORY_URL_AFTER_CREATION]
+GitHub: https://github.com/siddchauhan77/nyc-mobility-operations
 
 I am building evidence for Forward Deployed Engineer and Applied AI roles focused on reliable, human-reviewed systems.
 
