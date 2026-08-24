@@ -1,0 +1,165 @@
+{
+  "alert_count": 436,
+  "alert_counts": [
+    {
+      "alert_count": 9,
+      "direction": "high",
+      "metric_name": "gross_fare_per_trip",
+      "review_priority": "high"
+    },
+    {
+      "alert_count": 2,
+      "direction": "high",
+      "metric_name": "gross_fare_per_trip",
+      "review_priority": "medium"
+    },
+    {
+      "alert_count": 27,
+      "direction": "high",
+      "metric_name": "median_fare_per_mile",
+      "review_priority": "high"
+    },
+    {
+      "alert_count": 9,
+      "direction": "high",
+      "metric_name": "median_fare_per_mile",
+      "review_priority": "medium"
+    },
+    {
+      "alert_count": 42,
+      "direction": "high",
+      "metric_name": "median_trip_duration",
+      "review_priority": "high"
+    },
+    {
+      "alert_count": 68,
+      "direction": "high",
+      "metric_name": "median_trip_duration",
+      "review_priority": "medium"
+    },
+    {
+      "alert_count": 1,
+      "direction": "changed",
+      "metric_name": "payment_method_distribution",
+      "review_priority": "medium"
+    },
+    {
+      "alert_count": 262,
+      "direction": "high",
+      "metric_name": "trip_volume",
+      "review_priority": "high"
+    },
+    {
+      "alert_count": 3,
+      "direction": "low",
+      "metric_name": "trip_volume",
+      "review_priority": "high"
+    },
+    {
+      "alert_count": 13,
+      "direction": "high",
+      "metric_name": "trip_volume",
+      "review_priority": "medium"
+    }
+  ],
+  "artifacts": {
+    "anomaly_alerts": {
+      "bytes": 27748,
+      "path": "./phase-3/gold/anomaly_alerts.parquet",
+      "rows": 436,
+      "sha256": "a3f08c18a2e779c1610fd83ae78533083d85ab7cf4195c1dd3f9a3683410d41b"
+    },
+    "controlled_demand_spike_evaluation": {
+      "bytes": 1055,
+      "path": "./phase-3/reports/controlled_demand_spike_evaluation.json",
+      "rows": null,
+      "sha256": "ad5e54b339c95ae60256aeb7ce317648e8a268d7513e5e34e868520400663a93"
+    },
+    "evidence_receipts": {
+      "bytes": 401194,
+      "path": "./phase-3/evidence/evidence_receipts.jsonl",
+      "rows": 436,
+      "sha256": "a95161c378a5bbfcdaeb4412da6c4c17d14836cdb6900e0613cea0f40d59c9bd"
+    },
+    "human_review_queue": {
+      "bytes": 147331,
+      "path": "./phase-3/review/human_review_queue.csv",
+      "rows": 436,
+      "sha256": "3eda5e53ccc14ec85cdff3b10417f7393926d02633ac38a6a5317ade40adafdb"
+    },
+    "payment_distribution_metrics": {
+      "bytes": 3915556,
+      "path": "./phase-3/gold/payment_distribution_metrics.parquet",
+      "rows": 974640,
+      "sha256": "c3fb535966ad2a415d67eecdf3b1fc9d7b5d008c68f51557c008bf1527977622"
+    },
+    "payment_method_shifts": {
+      "bytes": 3059064,
+      "path": "./phase-3/gold/payment_method_shifts.parquet",
+      "rows": 194928,
+      "sha256": "4e3140dc579c018e1e1c1d13dccfb0157876a0ea8f54f44e8cd50057b13779dc"
+    },
+    "zone_hour_metrics": {
+      "bytes": 2388415,
+      "path": "./phase-3/gold/zone_hour_metrics.parquet",
+      "rows": 194928,
+      "sha256": "a7076c639f2b141e7954d950635c5e125476b7c2ac1cb42e7e144925bea83468"
+    },
+    "zone_hour_scored_metrics": {
+      "bytes": 12416371,
+      "path": "./phase-3/gold/zone_hour_scored_metrics.parquet",
+      "rows": 194928,
+      "sha256": "a5d786461ae11440967fea406ee91a474ee19acdc5977f435403bd4c88f96c91"
+    }
+  },
+  "configuration": {
+    "baseline": "leave-one-date-out median and MAD for the same pickup zone, ISO weekday, and hour",
+    "contract_version": "3.0.0",
+    "fare_per_mile_minimum_distance": 0.25,
+    "fare_per_mile_relative_threshold": 0.75,
+    "gross_fare_per_trip_relative_threshold": 0.75,
+    "median_duration_relative_threshold": 0.75,
+    "minimum_baseline_periods": 3,
+    "minimum_fare_per_mile_trips": 45,
+    "minimum_zone_hour_trips": 75,
+    "month": "2026-01",
+    "payment_js_divergence_threshold": 0.2,
+    "payment_total_variation_threshold": 0.35,
+    "robust_z_threshold": 6.0,
+    "scale_floors": {
+      "gross_fare_per_trip": 1.0,
+      "median_duration_seconds": 60.0,
+      "median_fare_per_mile": 0.25,
+      "trip_volume": 1.0
+    },
+    "volume_relative_threshold": 1.0
+  },
+  "eligibility": {
+    "fare_per_mile_evaluated_cells": 15840,
+    "per_trip_metric_evaluated_cells": 15846,
+    "volume_evaluated_cells": 17858,
+    "zone_hour_cells": 194928
+  },
+  "evidence_receipt_rows": 436,
+  "generated_at_utc": "2026-08-06T00:07:36.542474+00:00",
+  "gold_row_counts": {
+    "anomaly_alerts": 436,
+    "payment_distribution_metrics": 974640,
+    "payment_method_shifts": 194928,
+    "zone_hour_metrics": 194928,
+    "zone_hour_scored_metrics": 194928
+  },
+  "human_review_queue_rows": 436,
+  "run_version": "3.0.0",
+  "scope_boundary": "Deterministic Gold metrics and human-review prompts only. No causal claim, LLM, UI, integration, or deployment.",
+  "silver_input": {
+    "hash_unchanged": true,
+    "max_date": "2026-01-31",
+    "min_date": "2026-01-01",
+    "path": "./phase-2/silver/yellow_taxi_2026-01_silver.parquet",
+    "pickup_zone_count": 262,
+    "row_count": 3724881,
+    "sha256": "75833787c66e2690fa9c25cc9121366ab72f5e6b08baecc6f9f450c94c282c5b"
+  },
+  "status": "pass"
+}

@@ -1,0 +1,17 @@
+.DS_Store
+.vercel/
+.venv/
+__pycache__/
+*.pyc
+*.parquet
+
+# Official raw inputs are downloaded locally from NYC TLC.
+pipeline/phase-1/yellow_tripdata_*.parquet
+
+# Reproducible generated datasets stay local.
+pipeline/phase-2/bronze/
+pipeline/phase-2/silver/
+pipeline/phase-2/quarantine/
+pipeline/phase-3/gold/
+pipeline/phase-3/alerts/
+pipeline/phase-3/evidence/

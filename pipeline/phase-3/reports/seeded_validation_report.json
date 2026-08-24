@@ -1,0 +1,87 @@
+{
+  "cases": [
+    {
+      "actual": true,
+      "case": "demand_spike",
+      "expected": true,
+      "mad": 2,
+      "median": 100,
+      "observed": 180,
+      "passed": true,
+      "relative_threshold": 0.25
+    },
+    {
+      "actual": true,
+      "case": "fare_per_trip_spike",
+      "expected": true,
+      "mad": 0.5,
+      "median": 12,
+      "observed": 18,
+      "passed": true,
+      "relative_threshold": 0.2
+    },
+    {
+      "actual": true,
+      "case": "duration_spike",
+      "expected": true,
+      "mad": 50,
+      "median": 900,
+      "observed": 1500,
+      "passed": true,
+      "relative_threshold": 0.25
+    },
+    {
+      "actual": true,
+      "case": "fare_per_mile_spike",
+      "expected": true,
+      "mad": 0.2,
+      "median": 4,
+      "observed": 6,
+      "passed": true,
+      "relative_threshold": 0.25
+    },
+    {
+      "actual": false,
+      "case": "normal_variation",
+      "expected": false,
+      "mad": 2,
+      "median": 100,
+      "observed": 104,
+      "passed": true,
+      "relative_threshold": 0.25
+    },
+    {
+      "actual": true,
+      "baseline": [
+        0.75,
+        0.25
+      ],
+      "case": "payment_distribution_spike",
+      "expected": true,
+      "observed": [
+        0.45,
+        0.55
+      ],
+      "passed": true,
+      "total_variation_distance": 0.30000000000000004
+    },
+    {
+      "actual": false,
+      "baseline": [
+        0.75,
+        0.25
+      ],
+      "case": "payment_normal_variation",
+      "expected": false,
+      "observed": [
+        0.72,
+        0.28
+      ],
+      "passed": true,
+      "total_variation_distance": 0.030000000000000027
+    }
+  ],
+  "generated_at_utc": "2026-08-05T23:44:14.990579+00:00",
+  "seed": "fixed-explicit-fixtures-v1",
+  "status": "pass"
+}

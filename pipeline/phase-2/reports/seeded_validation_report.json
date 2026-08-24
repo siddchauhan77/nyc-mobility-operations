@@ -1,0 +1,89 @@
+{
+  "assertions": {
+    "bronze_manifest_preserved_on_repeat": true,
+    "input_rows_11": true,
+    "negative_fare_retained_as_warning": true,
+    "null_passenger_retained": true,
+    "quarantine_rows_9": true,
+    "raw_hashes_unchanged": true,
+    "reason_counts_match": true,
+    "repeat_counts_match": true,
+    "row_conservation": true,
+    "silver_rows_2": true
+  },
+  "observed": {
+    "quarantine_counts_by_reason": {
+      "dropoff_before_pickup": 1,
+      "exact_duplicate": 1,
+      "invalid_passenger_count": 1,
+      "invalid_trip_distance": 1,
+      "nonfinite_monetary_value": 1,
+      "pickup_outside_month": 1,
+      "required_field_missing": 1,
+      "unknown_dropoff_zone": 1,
+      "unknown_pickup_zone": 1
+    },
+    "row_counts": {
+      "bronze_input": 11,
+      "quarantine_output": 9,
+      "row_conservation_passed": true,
+      "silver_output": 2
+    },
+    "warning_counts": {
+      "duration_over_24h": 1,
+      "negative_fare_amount": 1,
+      "negative_total_amount": 1,
+      "passenger_count_missing": 1,
+      "trip_distance_over_200": 0,
+      "zero_duration": 0,
+      "zero_trip_distance": 0
+    }
+  },
+  "seeded_cases": [
+    {
+      "case": "valid",
+      "expected": "silver"
+    },
+    {
+      "case": "optional passenger null and negative fare",
+      "expected": "silver_with_warnings"
+    },
+    {
+      "case": "pickup outside month",
+      "expected": "pickup_outside_month"
+    },
+    {
+      "case": "dropoff before pickup",
+      "expected": "dropoff_before_pickup"
+    },
+    {
+      "case": "unknown pickup zone",
+      "expected": "unknown_pickup_zone"
+    },
+    {
+      "case": "unknown drop-off zone",
+      "expected": "unknown_dropoff_zone"
+    },
+    {
+      "case": "negative distance",
+      "expected": "invalid_trip_distance"
+    },
+    {
+      "case": "passenger count above contract maximum",
+      "expected": "invalid_passenger_count"
+    },
+    {
+      "case": "required VendorID missing",
+      "expected": "required_field_missing"
+    },
+    {
+      "case": "nonfinite fare",
+      "expected": "nonfinite_monetary_value"
+    },
+    {
+      "case": "exact duplicate of valid row",
+      "expected": "exact_duplicate"
+    }
+  ],
+  "status": "pass"
+}

@@ -1,0 +1,57 @@
+{
+  "assertions": {
+    "no_seeded_spike_missed": true,
+    "normal_variation_not_alerted": true,
+    "only_deterministic_gold_outputs": true,
+    "seeded_spike_detected": true,
+    "source_rows_preserved": true
+  },
+  "confusion_counts": {
+    "false_negatives": 0,
+    "false_positives": 0,
+    "true_negatives": 9,
+    "true_positives": 1
+  },
+  "detected_alerts": [
+    [
+      "trip_volume",
+      "2026-01-29",
+      10,
+      1
+    ]
+  ],
+  "expected_alerts": [
+    [
+      "trip_volume",
+      "2026-01-29",
+      10,
+      1
+    ]
+  ],
+  "precision": 1.0,
+  "recall": 1.0,
+  "scope": "Controlled synthetic demand-spike evaluation only. Metrics do not estimate production precision or recall.",
+  "seeded_input": {
+    "demand_spike": {
+      "date": "2026-01-29",
+      "hour": 10,
+      "volume": 220,
+      "zone": 1
+    },
+    "normal_zone_volumes": [
+      100,
+      104,
+      97,
+      103,
+      99
+    ],
+    "row_count": 1124,
+    "spike_zone_normal_volumes": [
+      100,
+      102,
+      98,
+      101
+    ]
+  },
+  "status": "pass"
+}

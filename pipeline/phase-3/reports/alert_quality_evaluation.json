@@ -1,0 +1,38 @@
+{
+  "alert_counts_by_metric": {
+    "fare_per_mile": 1819,
+    "gross_fare_per_trip": 2019,
+    "median_trip_duration": 2223,
+    "payment_method_distribution": 1568,
+    "trip_volume": 3222
+  },
+  "checks": {
+    "all_alerts_match_gold": true,
+    "gold_keys_unique": true,
+    "seeded_spike_and_normal_variation_pass": true
+  },
+  "evaluation_version": "3.0.0",
+  "known_limits": [
+    "One month supplies only three or four leave-one-out peers for most weekday-hour baselines.",
+    "Zero MAD groups receive no numeric robust-z alert because dispersion is undefined.",
+    "Payment change uses total variation distance and does not attribute a cause.",
+    "Observed zone-hours only. Missing zero-trip zone-hours are outside this release.",
+    "Alerts are statistical investigation prompts, not findings of fraud, error, or causation."
+  ],
+  "method": "seeded synthetic sensitivity and normal-variation specificity tests plus production eligibility accounting",
+  "production_eligibility": {
+    "baseline_eligible_zone_hours": 94055,
+    "observed_zone_hours": 118789,
+    "volume_eligible_zone_hours": 25705,
+    "zero_trip_count_mad_rows": 34354
+  },
+  "seeded_quality": {
+    "cases": 7,
+    "sensitivity": 1.0,
+    "specificity": 1.0,
+    "status": "pass",
+    "true_negatives": 2,
+    "true_positives": 5
+  },
+  "status": "pass"
+}

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive explanation of the NYC Mobility Operations Anomaly Review System.">
+  <meta name="theme-color" content="#0b1714">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NYC Mobility Operations | From Signal to Decision">
+  <meta property="og:description" content="An explainable taxi-operations review system built from 3.7 million January 2026 trips.">
+  <meta property="og:image" content="/nyc-map-post-storm.png">
+  <title>NYC Mobility Operations | From Signal to Decision</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="view-nav" aria-label="Case study views">
+    <div class="view-tabs" role="tablist" aria-label="Choose a case study view">
+      <button type="button" role="tab" aria-selected="true" aria-controls="impact-view" id="view-tab-impact" data-view="impact">Impact visual</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="three-p-view" id="view-tab-three-p" data-view="three-p">3Ps brief</button>
+    </div>
+  </nav>
+
+  <main id="impact-view" role="tabpanel" aria-labelledby="view-tab-impact">
+    <header class="hero">
+      <div class="eyebrow">NYC Mobility Operations</div>
+      <h1>From 3.7 million trips<br>to one operating decision</h1>
+      <p class="lede">An explainable review system for taxi fleet operations. Every alert ends with evidence, a human decision, and a metric to test.</p>
+      <div class="status-row" aria-label="Project status">
+        <span>Decision-support prototype</span>
+        <span>January 2026</span>
+        <span>No production impact claimed</span>
+      </div>
+    </header>
+
+    <section class="panel pipeline-panel" aria-labelledby="pipeline-title">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">01 · Before and after</div>
+          <h2 id="pipeline-title">From data burden to operating decision</h2>
+        </div>
+        <div class="replay-control">
+          <button class="replay-button" id="replay" type="button" aria-describedby="replay-status">Replay flow</button>
+          <span id="replay-status" role="status" aria-live="polite">Ready</span>
+        </div>
+      </div>
+
+      <div class="before-after" id="pipeline">
+        <article class="state-card before-state">
+          <div class="state-label">Before</div>
+          <strong class="count state-count" data-value="3724889">0</strong>
+          <span class="state-unit">trip records</span>
+          <div class="state-flow" aria-label="Before workflow">
+            <div><i class="raw-stack" aria-hidden="true"></i><span>Raw rows</span></div>
+            <b aria-hidden="true">→</b>
+            <div><i class="search-mark" aria-hidden="true"></i><span>Manual search</span></div>
+            <b aria-hidden="true">→</b>
+            <div><i class="question-mark" aria-hidden="true">?</i><span>No priority</span></div>
+          </div>
+        </article>
+
+        <div class="fde-transform" aria-label="FDE intervention">
+          <div class="transform-label">FDE build</div>
+          <svg viewBox="0 0 180 160" aria-hidden="true">
+            <path class="funnel-shell" d="M18 20h144l-49 61v46l-46 18V81L18 20Z"></path>
+            <path class="funnel-stream" d="M42 40h96M55 60h70M68 80h44M90 98v30"></path>
+          </svg>
+          <div class="transform-steps">
+            <span>Scope</span>
+            <span>Clean</span>
+            <span>Rank</span>
+            <span>Prove</span>
+          </div>
+        </div>
+
+        <article class="state-card after-state">
+          <div class="state-label">After</div>
+          <strong class="count state-count" data-value="436">0</strong>
+          <span class="state-unit">ranked prompts</span>
+          <div class="after-proof">
+            <div><i class="proof-dot"></i><span>Evidence</span></div>
+            <div><i class="proof-dot"></i><span>Priority</span></div>
+            <div><i class="proof-dot"></i><span>Human decision</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="change-strip" aria-label="Measured system impact">
+        <article><strong>94.8%</strong><span>fewer alerts</span></article>
+        <article><strong>436 / 436</strong><span>evidence-linked</span></article>
+        <article><strong>8 / 8</strong><span>tests passed</span></article>
+        <article class="trial-result"><strong>Next</strong><span>fleet impact trial</span></article>
+      </div>
+    </section>
+
+    <section class="panel decision-panel" aria-labelledby="decision-title">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">02 · Signal to action</div>
+          <h2 id="decision-title">Three operating decisions</h2>
+        </div>
+        <p class="section-intro">Select a case to follow the evidence chain.</p>
+      </div>
+
+      <div class="case-tabs" role="tablist" aria-label="Operating cases">
+        <button type="button" role="tab" aria-selected="true" aria-controls="case-detail" id="tab-event" data-case="event">New Year’s event</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="case-detail" id="tab-airport" data-case="airport">LaGuardia storm</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="case-detail" id="tab-recovery" data-case="recovery">Post-storm recovery</button>
+      </div>
+
+      <section class="map-shell" aria-labelledby="map-title">
+        <div class="map-copy">
+          <div class="node-caption">Where the signal appeared</div>
+          <h3 id="map-title">New Year’s alert geography</h3>
+          <p id="map-subtitle">Top alert zones plus the Times Square pickup collapse.</p>
+          <div class="map-stat">
+            <strong id="map-stat-value">176</strong>
+            <span id="map-stat-label">alerts across 45 zones</span>
+          </div>
+          <div class="map-legend">
+            <span><i class="map-swatch low"></i>NYC taxi zone</span>
+            <span><i class="map-swatch high"></i>Scenario focus</span>
+          </div>
+          <p class="map-instruction">Hover or focus a highlighted zone.</p>
+          <p class="map-source">Geometry: <a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page" target="_blank" rel="noreferrer">official NYC TLC taxi zones</a>, February 2026 snapshot.</p>
+        </div>
+        <div class="map-frame">
+          <svg id="nyc-map" viewBox="0 0 760 500" role="img" aria-label="NYC taxi-zone map showing highlighted alert areas">
+            <g id="map-layer"></g>
+          </svg>
+          <div class="map-tooltip" id="map-tooltip" role="status" aria-live="polite">
+            <strong id="map-tooltip-zone">Select a highlighted zone</strong>
+            <span id="map-tooltip-detail">Alert evidence appears here.</span>
+          </div>
+          <div class="map-loading" id="map-loading">Loading official TLC zones</div>
+        </div>
+      </section>
+
+      <div class="impact-map" id="case-detail" role="tabpanel" aria-live="polite" aria-labelledby="tab-event">
+        <article class="trigger-node">
+          <div class="node-caption">Observed signal</div>
+          <div class="signal-orbit" aria-hidden="true">
+            <span class="orbit-ring ring-one"></span>
+            <span class="orbit-ring ring-two"></span>
+            <svg viewBox="0 0 64 64" role="img" aria-label="Event signal">
+              <rect x="13" y="17" width="38" height="34" rx="5"></rect>
+              <path d="M21 12v10M43 12v10M13 28h38M21 36h8M35 36h8M21 43h8"></path>
+            </svg>
+          </div>
+          <strong id="trigger-title">Street closure</strong>
+          <span class="evidence-chip" id="trigger-evidence">176 alerts · 00:00–05:00</span>
+        </article>
+
+        <div class="animated-link" aria-hidden="true"><span></span></div>
+
+        <article class="market-node">
+          <div class="node-caption">Market response</div>
+          <div class="balance-row demand-row">
+            <div class="balance-label">
+              <span>Demand</span>
+              <strong id="demand-state">moves outward</strong>
+            </div>
+            <div class="direction-track"><span id="demand-flow"></span></div>
+          </div>
+          <div class="balance-row supply-row">
+            <div class="balance-label">
+              <span>Supply</span>
+              <strong id="supply-state">stays inside plan</strong>
+            </div>
+            <div class="direction-track taxi-track">
+              <span id="supply-flow"></span>
+              <i class="taxi taxi-one" aria-hidden="true"></i>
+              <i class="taxi taxi-two" aria-hidden="true"></i>
+              <i class="taxi taxi-three" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="imbalance-badge">
+            <span>Mismatch</span>
+            <strong id="mismatch-state">cars in the wrong zones</strong>
+          </div>
+          <div class="human-action">
+            <span>Human decision</span>
+            <strong id="human-decision">Re-stage outside closures</strong>
+          </div>
+        </article>
+
+        <div class="animated-link" aria-hidden="true"><span></span></div>
+
+        <section class="outcome-node" aria-label="Business consequences">
+          <div class="node-caption">Impact to test</div>
+
+          <article class="outcome money-outcome">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="18"></circle>
+              <path d="M29 17c-1.5-1.4-3.2-2-5.4-2-3.2 0-5.6 1.6-5.6 4s2 3.5 6 4.4 6 2 6 4.8-2.5 4.8-6.3 4.8c-2.7 0-4.8-.8-6.7-2.5M24 11v26"></path>
+            </svg>
+            <div><span>Money</span><strong id="money-impact">missed trips</strong></div>
+          </article>
+
+          <article class="outcome time-outcome">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="18"></circle>
+              <path d="M24 14v11l7 5"></path>
+            </svg>
+            <div><span>Time</span><strong id="time-impact">empty travel</strong></div>
+          </article>
+
+          <article class="outcome risk-outcome">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M24 7 44 40H4L24 7Z"></path>
+              <path d="M24 18v11M24 34v1"></path>
+            </svg>
+            <div><span>Risk</span><strong id="risk-impact">pickup friction</strong></div>
+          </article>
+        </section>
+
+        <p class="sr-only" id="case-summary">Street closures aligned with displaced pickup demand. A fleet operator would review driver staging outside the closure boundary and measure trips per driver-hour and empty miles.</p>
+      </div>
+
+      <div class="visual-key" aria-label="Evidence key">
+        <span><i class="key-dot verified"></i>Verified signal</span>
+        <span><i class="key-dot directional"></i>Directional inference</span>
+        <span><i class="key-dot test"></i>Impact requires fleet trial</span>
+      </div>
+    </section>
+
+    <section class="impact-grid" aria-labelledby="impact-title">
+      <h2 id="impact-title" class="sr-only">Measured and unmeasured impact</h2>
+      <article class="panel impact-card proven">
+        <div class="kicker">Proved now</div>
+        <h3>System impact</h3>
+        <ul>
+          <li><strong>94.8%</strong><span>fewer alerts than the first configuration</span></li>
+          <li><strong>436 / 436</strong><span>alerts linked to evidence receipts</span></li>
+          <li><strong>8 / 8</strong><span>deterministic tests passed</span></li>
+        </ul>
+      </article>
+
+      <article class="panel impact-card unproven">
+        <div class="kicker">Requires fleet trial</div>
+        <h3>Business impact</h3>
+        <ul>
+          <li><strong>Trips</strong><span>completed per driver-hour</span></li>
+          <li><strong>Miles</strong><span>driven without a passenger</span></li>
+          <li><strong>Time</strong><span>passenger pickup and airport waiting</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="panel use-test-panel" aria-labelledby="use-test-title">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">03 · Use and test</div>
+          <h2 id="use-test-title">Move from map signal to proof</h2>
+        </div>
+      </div>
+
+      <div class="use-test-grid">
+        <article>
+          <div class="workflow-label">Use the report</div>
+          <ol>
+            <li><span>1</span><div><strong>Select a scenario</strong><small>Event, airport, or recovery</small></div></li>
+            <li><span>2</span><div><strong>Inspect highlighted zones</strong><small>Find the place and hour</small></div></li>
+            <li><span>3</span><div><strong>Review the evidence</strong><small>Signal before explanation</small></div></li>
+            <li><span>4</span><div><strong>Approve one action</strong><small>Human decision required</small></div></li>
+          </ol>
+        </article>
+
+        <article>
+          <div class="workflow-label">Test the impact</div>
+          <ol>
+            <li><span>A</span><div><strong>Choose test zones</strong><small>Five alert-informed zones</small></div></li>
+            <li><span>B</span><div><strong>Choose control zones</strong><small>Five comparable zones</small></div></li>
+            <li><span>C</span><div><strong>Change one decision</strong><small>Staging, dispatch, or ETA</small></div></li>
+            <li><span>D</span><div><strong>Measure the difference</strong><small>Money, time, risk, service</small></div></li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="test-metrics" aria-label="Fleet trial metrics">
+        <span>Trips per driver-hour</span>
+        <span>Revenue per online hour</span>
+        <span>Empty miles</span>
+        <span>Pickup delay</span>
+      </div>
+    </section>
+
+    <section class="panel closing-panel">
+      <div>
+        <div class="kicker">The “so what?”</div>
+        <h2>It turns anomaly detection into an operating test.</h2>
+      </div>
+      <p>Signal → evidence → human decision → controlled action → money and service metric.</p>
+    </section>
+  </main>
+
+  <main id="three-p-view" class="three-p-view" role="tabpanel" aria-labelledby="view-tab-three-p" hidden>
+    <header class="brief-hero">
+      <div class="eyebrow">Interview-ready case brief</div>
+      <h1>Problem.<br>Process.<br>Payoff.</h1>
+      <p class="lede">A direct explanation of what the system changed, what it proved, and what still needs a fleet trial.</p>
+      <div class="status-row" aria-label="Evidence boundary">
+        <span>Official TLC data</span>
+        <span>Deterministic methods</span>
+        <span>Business impact not yet claimed</span>
+      </div>
+    </header>
+
+    <section class="three-p-grid" aria-label="Problem, process, and payoff">
+      <article class="three-p-card problem-card">
+        <div class="p-card-head">
+          <span>P1</span>
+          <div>
+            <div class="kicker">Problem</div>
+            <h2>Data existed. Operating priority did not.</h2>
+          </div>
+        </div>
+        <p>January taxi records described completed trips. They did not tell a fleet operator which zone-hour changes deserved review first.</p>
+        <div class="problem-stack" aria-label="Problem scale">
+          <div><strong>3,724,889</strong><span>trip records</span></div>
+          <div><strong>8,423</strong><span>first-pass alerts</span></div>
+          <div><strong>Unranked</strong><span>operating queue</span></div>
+        </div>
+        <div class="p-bottom-line">The bottleneck was decision overload, not missing data.</div>
+      </article>
+
+      <article class="three-p-card process-card">
+        <div class="p-card-head">
+          <span>P2</span>
+          <div>
+            <div class="kicker">Process</div>
+            <h2>Turn raw activity into review-ready evidence.</h2>
+          </div>
+        </div>
+        <ol class="process-rail">
+          <li><span>1</span><div><strong>Quality gate</strong><small>Type records, quarantine rejects, document null policy</small></div></li>
+          <li><span>2</span><div><strong>Comparable baseline</strong><small>Compare each zone by weekday and hour</small></div></li>
+          <li><span>3</span><div><strong>Explainable detection</strong><small>Volume, fare, duration, fare-per-mile, payment mix</small></div></li>
+          <li><span>4</span><div><strong>Evidence receipt</strong><small>Link every prompt to the supporting Gold-table query</small></div></li>
+          <li><span>5</span><div><strong>Human boundary</strong><small>Prompt investigation. Do not prescribe action or claim cause</small></div></li>
+        </ol>
+        <div class="p-bottom-line">The FDE work connected data quality, model logic, operator workflow, and evidence.</div>
+      </article>
+
+      <article class="three-p-card payoff-card">
+        <div class="p-card-head">
+          <span>P3</span>
+          <div>
+            <div class="kicker">Payoff</div>
+            <h2>Smaller queue. Stronger proof. Review ready.</h2>
+          </div>
+        </div>
+        <div class="payoff-proof">
+          <div><strong>94.8%</strong><span>fewer alerts than the first configuration</span></div>
+          <div><strong>436 / 436</strong><span>final prompts linked to evidence</span></div>
+          <div><strong>8 / 8</strong><span>deterministic tests passed</span></div>
+        </div>
+        <div class="proof-boundary">
+          <div><span>Proved</span><strong>Review system reliability</strong></div>
+          <div><span>Not yet proved</span><strong>Fleet revenue or service improvement</strong></div>
+        </div>
+        <div class="p-bottom-line">The current payoff is a smaller, auditable decision queue. Operational ROI needs a controlled pilot.</div>
+      </article>
+    </section>
+
+    <section class="panel deployment-panel" aria-labelledby="deployment-title">
+      <div class="deployment-heading">
+        <div>
+          <div class="kicker">Real-world deployment path</div>
+          <h2 id="deployment-title">An internal shift-planning product for a fleet operator.</h2>
+        </div>
+        <span class="deployment-boundary">Proposed pilot · not deployed</span>
+      </div>
+
+      <div class="deployment-roles" aria-label="Buyer, users, and delivery team">
+        <article>
+          <span>Economic buyer</span>
+          <strong>Director of Fleet Operations</strong>
+          <p>Owns driver productivity, service levels, and the pilot budget.</p>
+        </article>
+        <article>
+          <span>Daily users</span>
+          <strong>Dispatch and operations managers</strong>
+          <p>Review ranked zone-hour prompts before each operating shift.</p>
+        </article>
+        <article>
+          <span>Delivery team</span>
+          <strong>FDE + data engineer + ops analyst</strong>
+          <p>Connect fleet data, tune thresholds, train users, and measure outcomes.</p>
+        </article>
+      </div>
+
+      <div class="deployment-loop" aria-label="Product operating loop">
+        <article><span>01</span><strong>Ingest</strong><p>Combine completed trips with live fleet supply, demand, ETA, and weather data.</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>02</span><strong>Prioritize</strong><p>Rank zone-hour changes and attach an evidence receipt to each prompt.</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>03</span><strong>Approve</strong><p>An operator accepts, rejects, or annotates a staging or dispatch test.</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>04</span><strong>Measure</strong><p>Compare test and control zones, then retain only changes linked to better results.</p></article>
+      </div>
+
+      <div class="deployment-scorecard">
+        <div>
+          <span>Decision changed</span>
+          <strong>Where and when to stage available drivers</strong>
+        </div>
+        <div>
+          <span>30-day pilot measures</span>
+          <strong>Trips per driver-hour · revenue per online hour · empty miles · pickup delay</strong>
+        </div>
+        <div>
+          <span>Ship / stop rule</span>
+          <strong>Expand only after test zones outperform matched controls without harming service or safety</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel next-build-panel" aria-labelledby="next-build-title">
+      <div class="next-build-heading">
+        <div>
+          <div class="kicker">With more time</div>
+          <h2 id="next-build-title">Move from decision support to measured operating impact.</h2>
+        </div>
+        <span class="next-gate">Next approval gate</span>
+      </div>
+      <div class="next-build-flow">
+        <article><span>01</span><strong>Interview operators</strong><p>Validate which alerts change staging, dispatch, or ETA decisions.</p></article>
+        <article><span>02</span><strong>Run a controlled pilot</strong><p>Compare five alert-informed zones with five similar control zones.</p></article>
+        <article><span>03</span><strong>Log decisions</strong><p>Connect signal, approved action, operator rationale, and observed result.</p></article>
+        <article><span>04</span><strong>Measure ROI</strong><p>Track trips per driver-hour, revenue per online hour, empty miles, and pickup delay.</p></article>
+      </div>
+      <div class="next-principle">
+        <strong>Build order</strong>
+        <span>Operator workflow first → measurement second → narrative or LLM layer last</span>
+      </div>
+    </section>
+
+    <section class="interview-answer" aria-labelledby="interview-answer-title">
+      <div class="kicker">90-second answer</div>
+      <h2 id="interview-answer-title">What did you build, and so what?</h2>
+      <blockquote>“I turned 3.7 million NYC taxi records into 436 evidence-linked investigation prompts. I built the quality layer, robust zone-hour baselines, five explainable detectors, evidence receipts, and a human review boundary. The system reduced alert overload by 94.8% and passed eight deterministic tests. The proposed buyer is a director of fleet operations, with dispatch managers reviewing prompts before shifts. I have not claimed fleet ROI. The next step is a 30-day controlled pilot measuring trips per driver-hour, revenue per online hour, empty miles, and pickup delay.”</blockquote>
+    </section>
+  </main>
+
+  <footer>
+    <span>NYC Mobility Operations Anomaly Review System</span>
+    <span>Portfolio case study · Decision support, not autonomous action</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
